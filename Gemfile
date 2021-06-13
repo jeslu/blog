@@ -25,7 +25,10 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
 gem "actiontext", require: "action_text"
-
+# uso de boostrap
+gem 'bootstrap', '~> 5.0.1'
+gem 'jquery-rails'
+gem "font-awesome-rails"
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
