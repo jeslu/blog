@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :clientes
-  get 'inicio/index'# optiene la ruta de inicio
+  #get 'inicio/index'# optiene la ruta de inicio
   resources :articles do
   resources :comments 
   end
