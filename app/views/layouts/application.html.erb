@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+  
     <title>CodeWeb</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -9,14 +10,13 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %> 
 
   </head>
-
-
-
-  <body>
-  
-  <div class="container-max-widths">
-  <%= yield %>
-  </div>
-   
-  </body>
+    <body>
+      <%= link_to root_path do%>
+        <%= image_tag 'logo.jpeg', :class => "img-fluid"%>
+      <%end%>
+    <div class="container-max-widths">
+    <%= yield %>
+    </div>
+    
+    </body>
 </html>
