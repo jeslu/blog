@@ -14,3 +14,9 @@
 # ActiveSupport::Inflector.inflections(:en) do |inflect|
 #   inflect.acronym 'RESTful'
 # end
+
+ActiveSupport::Inflector.inflections do |inflect|
+    # MODULO PRODUCTOS
+    inflect.irregular 'cliente', 'clientes'
+    inflect.irregular 'categoria','categorias'
+end
