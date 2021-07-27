@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :producto do
+    resources :categorias
+  end
   resources :clientes
   #get 'inicio/index'# optiene la ruta de inicio
   resources :articles do
