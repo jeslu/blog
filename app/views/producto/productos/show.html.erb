@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Barcode:</strong>
+  <%= @producto_producto.barcode %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @producto_producto.descripcion %>
+</p>
+
+<p>
+  <strong>Precio:</strong>
+  <%= @producto_producto.precio %>
+</p>
+
+<p>
+  <strong>Umedidas:</strong>
+  <%= @producto_producto.umedidas_id %>
+</p>
+
+<p>
+  <strong>Categorias:</strong>
+  <%= @producto_producto.categorias_id %>
+</p>
+
+<%= link_to 'Edit', edit_producto_producto_path(@producto_producto) %> |
+<%= link_to 'Back', producto_productos_path %>

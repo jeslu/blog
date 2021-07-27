@@ -19,4 +19,8 @@ ActiveSupport::Inflector.inflections do |inflect|
     # MODULO PRODUCTOS
     inflect.irregular 'cliente', 'clientes'
     inflect.irregular 'categoria','categorias'
+    inflect.irregular 'producto', 'productos'
+    inflect.irregular 'umedida', 'umedidas'
+
+    
 end
