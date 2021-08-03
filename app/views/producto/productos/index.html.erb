@@ -1,34 +1,75 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Producto Productos</h1>
+    <div class="container">
+      <div class="content">
+        <div class = "shadow-lg p-3 mb-5 bg-white rounded">
+          <div class="row">
+            <div class="col">
+              <%= link_to producto_categorias_url do %>
+                  <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                      <h5 class="card-title">Categorias Agregadas</h5>
+                      <h6 class="card-subtitle mb-2 text-muted">:)</h6>
+                      <p class="card-text"></p>
+                      <%= link_to 'Agregar Categoria', new_producto_categoria_path, :class=>"card-link" %>
+                      <a href="#" class="card-link"></a>
+                    </div>
+                  </div>    
+              <%end%>
+            </div>
+            <div class="col">
+            <%= link_to producto_umedidas_url do %>
+                  <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                      <h5 class="card-title">Unidad Medidas Agregadas</h5>
+                      <h6 class="card-subtitle mb-2 text-muted">:)</h6>
+                      <p class="card-text"></p>
+                      <%= link_to 'Agregar Unidad Medidas', new_producto_umedida_path, :class=>"card-link" %>
+                      <a href="#" class="card-link"></a>
+                    </div>
+                  </div>    
+              <%end%>
+            </div>
+          </div> 
+        </div>
+      </div>
+    </div>
+<div class="container">
+  <div class="content">
+    <div class = "shadow-lg p-3 mb-5 bg-white rounded">
+    <div class="table-responsive">
+        <table class="table"> 
+        <thead>
+          <tr>
+            <th>Barcode</th>
+            <th>Descripcion</th>
+            <th>Precio</th>
+            <th>Umedidas</th>
+            <th>Categorias</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Barcode</th>
-      <th>Descripcion</th>
-      <th>Precio</th>
-      <th>Umedidas</th>
-      <th>Categorias</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+        <tbody>
+          <% @producto_productos.each do |producto_producto| %>
+            <tr>
+              <td><%= producto_producto.barcode %></td>
+              <td><%= producto_producto.descripcion %></td>
+              <td><%= producto_producto.precio %></td>
+              <td><%= producto_producto.umedidas_id %></td>
+              <td><%= producto_producto.categorias_id %></td>
+              <td><%= link_to 'Show', producto_producto %></td>
+              <td><%= link_to 'Edit', edit_producto_producto_path(producto_producto) %></td>
+              <td><%= link_to 'Destroy', producto_producto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
 
-  <tbody>
-    <% @producto_productos.each do |producto_producto| %>
-      <tr>
-        <td><%= producto_producto.barcode %></td>
-        <td><%= producto_producto.descripcion %></td>
-        <td><%= producto_producto.precio %></td>
-        <td><%= producto_producto.umedidas_id %></td>
-        <td><%= producto_producto.categorias_id %></td>
-        <td><%= link_to 'Show', producto_producto %></td>
-        <td><%= link_to 'Edit', edit_producto_producto_path(producto_producto) %></td>
-        <td><%= link_to 'Destroy', producto_producto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
 <br>
 

@@ -28,12 +28,12 @@
 
   <div class="field">
     <%= form.label :umedidas_id %>
-    <%= form.text_field :umedidas_id %>
+    <%= form.collection_select(:umedidas_id,  Producto::Umedida.all, :id, :medida, options={}, {:class => "ui search dropdown"})%>
   </div>
 
   <div class="field">
     <%= form.label :categorias_id %>
-    <%= form.text_field :categorias_id %>
+    <%= form.collection_select(:categorias_id, Producto::Categoria.all, :id, :categoria, options = {}, {:class => "ui search dropdown"}) %>
   </div>
 
   <div class="actions">

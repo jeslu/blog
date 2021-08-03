@@ -1,15 +1,32 @@
-<h2><%= link_to 'mi blog', controller: 'articles'%></h2>
-<div class="container">
-  <%= link_to clientes_url do %>
-          <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">Clientes</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Clientes Registrados</h6>
-              <p class="card-text"></p>
-              <%= link_to 'New Cliente', new_cliente_path, :class=>"card-link" %>
-              <a href="#" class="card-link">clientes Activos</a>
-            </div>
-            
-          </div>
-    <%end%>
-</div>
+  <h2><%= link_to 'mi blog', controller: 'articles'%></h2>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <%= link_to clientes_url do %>
+                <div class="card" style="width: 18rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">Clientes</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Clientes Registrados</h6>
+                    <p class="card-text"></p>
+                    <%= link_to 'New Cliente', new_cliente_path, :class=>"card-link" %>
+                    <a href="#" class="card-link">clientes Activos</a>
+                  </div>
+                </div>    
+          <%end%>
+      </div>
+      <div class="col">   
+        <%= link_to producto_productos_url do %>
+              <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Productos</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Clientes Registrados</h6>
+                  <p class="card-text"></p>
+                  <%= link_to 'productos', producto_productos_path, :class=>"card-link" %>
+                  <a href="#" class="card-link">clientes Activos</a>
+                </div>
+                
+              </div>
+        <%end%>
+       </div> 
+    </div>
+  </div>
