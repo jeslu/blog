@@ -6,6 +6,11 @@
 </p>
 
 <p>
+  <strong>Nombre:</strong>
+  <%= @producto_producto.nombre %>
+</p>
+
+<p>
   <strong>Descripcion:</strong>
   <%= @producto_producto.descripcion %>
 </p>
@@ -16,13 +21,13 @@
 </p>
 
 <p>
-  <strong>Umedidas:</strong>
-  <%= @producto_producto.umedidas_id %>
+  <strong>Umedida:</strong>
+  <%= @producto_producto.Umedida.medida %>
 </p>
 
 <p>
-  <strong>Categorias:</strong>
-  <%= @producto_producto.categorias_id %>
+  <strong>Categoria:</strong>
+  <%= @producto_producto.Categoria.categoria %>
 </p>
 
 <%= link_to 'Edit', edit_producto_producto_path(@producto_producto) %> |

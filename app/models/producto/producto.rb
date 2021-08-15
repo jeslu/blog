@@ -1,8 +1,6 @@
 class Producto::Producto < ApplicationRecord
-    self.table_name = "Producto_Productos"#Renombrar la tabla en rails
-    #Associaciones
-    belongs_to :Categoria, :class_name => "Producto::Categoria", :foreign_key => "categoria_id"
+    self.table_name = "Producto_productos"
     belongs_to :Umedida, :class_name => "Producto::Umedida", :foreign_key => "umedida_id"
-
-
+    belongs_to :Categoria, :class_name => "Producto::Categoria", :foreign_key => "categoria_id"
+    
 end

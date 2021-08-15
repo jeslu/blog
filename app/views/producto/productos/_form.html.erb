@@ -17,6 +17,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre %>
+  </div>
+
+  <div class="field">
     <%= form.label :descripcion %>
     <%= form.text_field :descripcion %>
   </div>
@@ -27,13 +32,14 @@
   </div>
 
   <div class="field">
-    <%= form.label :umedidas_id %>
-    <%= form.collection_select(:umedidas_id,  Producto::Umedida.all, :id, :medida, options={}, {:class => "ui search dropdown"})%>
+    <%= form.label :umedida_id %>
+     <%= form.collection_select(:umedida_id, Producto::Umedida.all, :id, :medida, options = {}, {:class => "ui search dropdown"}) %>
   </div>
 
   <div class="field">
-    <%= form.label :categorias_id %>
-    <%= form.collection_select(:categorias_id, Producto::Categoria.all, :id, :categoria, options = {}, {:class => "ui search dropdown"}) %>
+    <%= form.label :categoria_id %>
+     <%= form.collection_select(:categoria_id, Producto::Categoria.all, :id, :categoria, options = {}, {:class => "ui search dropdown"}) %>
+
   </div>
 
   <div class="actions">

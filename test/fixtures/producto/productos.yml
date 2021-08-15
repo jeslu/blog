@@ -2,14 +2,16 @@
 
 one:
   barcode: MyString
+  nombre: MyString
   descripcion: MyString
   precio: 9.99
-  umedidas_id: 
-  categorias_id: 
+  umedida_id: 
+  categoria_id: 
 
 two:
   barcode: MyString
+  nombre: MyString
   descripcion: MyString
   precio: 9.99
-  umedidas_id: 
-  categorias_id: 
+  umedida_id: 
+  categoria_id: 

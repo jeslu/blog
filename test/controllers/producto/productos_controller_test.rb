@@ -17,7 +17,7 @@ class Producto::ProductosControllerTest < ActionDispatch::IntegrationTest
 
   test "should create producto_producto" do
     assert_difference('Producto::Producto.count') do
-      post producto_productos_url, params: { producto_producto: { barcode: @producto_producto.barcode, categorias_id: @producto_producto.categorias_id, descripcion: @producto_producto.descripcion, precio: @producto_producto.precio, umedidas_id: @producto_producto.umedidas_id } }
+      post producto_productos_url, params: { producto_producto: { barcode: @producto_producto.barcode, categoria_id: @producto_producto.categoria_id, descripcion: @producto_producto.descripcion, nombre: @producto_producto.nombre, precio: @producto_producto.precio, umedida_id: @producto_producto.umedida_id } }
     end
 
     assert_redirected_to producto_producto_url(Producto::Producto.last)
@@ -34,7 +34,7 @@ class Producto::ProductosControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update producto_producto" do
-    patch producto_producto_url(@producto_producto), params: { producto_producto: { barcode: @producto_producto.barcode, categorias_id: @producto_producto.categorias_id, descripcion: @producto_producto.descripcion, precio: @producto_producto.precio, umedidas_id: @producto_producto.umedidas_id } }
+    patch producto_producto_url(@producto_producto), params: { producto_producto: { barcode: @producto_producto.barcode, categoria_id: @producto_producto.categoria_id, descripcion: @producto_producto.descripcion, nombre: @producto_producto.nombre, precio: @producto_producto.precio, umedida_id: @producto_producto.umedida_id } }
     assert_redirected_to producto_producto_url(@producto_producto)
   end
 
