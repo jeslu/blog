@@ -21,6 +21,7 @@ ActiveSupport::Inflector.inflections do |inflect|
     inflect.irregular 'categoria','categorias'
     inflect.irregular 'producto', 'productos'
     inflect.irregular 'umedida', 'umedidas'
-
+    # MODULO DE CUENTAS
+    inflect.irregular 'cuenta', 'cuentas'
     
 end

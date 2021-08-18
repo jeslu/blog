@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :cuenta do
+    resources :clientes
+  end
   namespace :producto do
     resources :productos
   end

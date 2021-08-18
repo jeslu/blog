@@ -1,5 +1,5 @@
 class Producto::Producto < ApplicationRecord
-    self.table_name = "Producto_productos"
+    self.table_name = "Producto_Productos"
     belongs_to :Umedida, :class_name => "Producto::Umedida", :foreign_key => "umedida_id"
     belongs_to :Categoria, :class_name => "Producto::Categoria", :foreign_key => "categoria_id"
     
