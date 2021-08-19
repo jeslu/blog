@@ -1,16 +1,13 @@
 Rails.application.routes.draw do
   namespace :cuenta do
-    resources :clientes
+    resources :cuenta_clientes
   end
   namespace :producto do
     resources :productos
+      resources :umedidas
+      resources :categorias
   end
-  namespace :producto do
-    resources :umedidas
-  end
-  namespace :producto do
-    resources :categorias
-  end
+
   resources :clientes
   #get 'inicio/index'# optiene la ruta de inicio
   resources :articles do
