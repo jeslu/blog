@@ -23,5 +23,6 @@ ActiveSupport::Inflector.inflections do |inflect|
     inflect.irregular 'umedida', 'umedidas'
     # MODULO DE CUENTAS
     inflect.irregular 'cuenta_cliente', 'cuenta_clientes'
+    inflect.irregular 'cotizacion', 'cotizaciones'
     
 end

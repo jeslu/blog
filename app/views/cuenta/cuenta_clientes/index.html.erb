@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cuenta Cuenta Clientes</h1>
+
+<table class = "table">
+  <thead>
+    <tr>
+      <th>Cliente</th>
+      <th>User</th>
+      <th>Fecha</th>
+      <th>Activo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cuenta_cuenta_clientes.each do |cuenta_cuenta_cliente| %>
+      <tr>
+        <td><%= cuenta_cuenta_cliente.cliente.nombre %></td>
+        <td><%= cuenta_cuenta_cliente.user.email %></td>
+        <td><%= cuenta_cuenta_cliente.fecha %></td>
+        <td><%= cuenta_cuenta_cliente.activo %></td>
+        <td><%= link_to 'Show', cuenta_cuenta_cliente %></td>
+        <td><%= link_to 'Edit', edit_cuenta_cuenta_cliente_path(cuenta_cuenta_cliente) %></td>
+        <td><%= link_to 'Destroy', cuenta_cuenta_cliente, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cuenta Cuenta Cliente', new_cuenta_cuenta_cliente_path %>
+<br>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_19_040837) do
+ActiveRecord::Schema.define(version: 2021_08_21_021245) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -70,11 +70,14 @@ ActiveRecord::Schema.define(version: 2021_08_19_040837) do
   end
 
   create_table "cuenta_cuenta_clientes", force: :cascade do |t|
-    t.boolean "activo"
     t.integer "cliente_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "fecha"
+    t.boolean "activo"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["cliente_id"], name: "index_cuenta_cuenta_clientes_on_cliente_id"
+    t.index ["user_id"], name: "index_cuenta_cuenta_clientes_on_user_id"
   end
 
   create_table "producto_categorias", force: :cascade do |t|
@@ -117,4 +120,5 @@ ActiveRecord::Schema.define(version: 2021_08_19_040837) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comments", "articles"
   add_foreign_key "cuenta_cuenta_clientes", "clientes"
+  add_foreign_key "cuenta_cuenta_clientes", "users"
 end
