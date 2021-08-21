@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  namespace :cuenta do
-    resources :cuenta_clientes
-  end
+  devise_for :users
   namespace :producto do
     resources :productos
       resources :umedidas
@@ -15,7 +13,7 @@ Rails.application.routes.draw do
   end
 
 
-  root 'inicio#index'# optener la ruta de inicio en raiz 
+  root to: 'inicio#index'# optener la ruta de inicio en raiz 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
