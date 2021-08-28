@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
+
   namespace :cuenta do
-    resources :cuenta_clientes
+    #/cuenta/cuenta_clientes/
+    resources :cuenta_clientes do
+      #/cuenta/cuenta_clientes/:cuenta_cliente_id/cotizaciones
+    resources :cotizaciones
+    end
   end
   devise_for :users
   namespace :producto do

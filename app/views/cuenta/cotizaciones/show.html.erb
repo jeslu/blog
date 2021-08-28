@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cuenta:</strong>
+  <%= @cuenta_cotizacion.cuenta_id %>
+</p>
+
+<p>
+  <strong>Producto:</strong>
+  <%= @cuenta_cotizacion.producto_id %>
+</p>
+
+<p>
+  <strong>Cantidad:</strong>
+  <%= @cuenta_cotizacion.cantidad %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @cuenta_cotizacion.total %>
+</p>
+
+<%= link_to 'Edit', edit_cuenta_cotizacion_path(@cuenta_cotizacion) %> |
+<%= link_to 'Back', cuenta_cotizaciones_path %>

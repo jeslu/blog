@@ -3,5 +3,5 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-         has_many :Cuentas
+  has_many :Cuentas, :class_name => "Cuenta::CuentaCliente", :foreign_key => "user_id"
 end

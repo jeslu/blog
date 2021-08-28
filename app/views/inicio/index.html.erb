@@ -21,12 +21,27 @@
                   <h5 class="card-title">Productos</h5>
                   <h6 class="card-subtitle mb-2 text-muted">Clientes Registrados</h6>
                   <p class="card-text"></p>
-                  <%= link_to 'productos', producto_productos_path, :class=>"card-link" %>
+                  <%= link_to 'nuevo productos', new_producto_producto_path, :class=>"card-link" %>
                   <a href="#" class="card-link">clientes Activos</a>
                 </div>
                 
               </div>
         <%end%>
        </div> 
+
+       <div class="col">   
+        <%= link_to cuenta_cuenta_clientes_url do %>
+              <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Cuentas</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Clientes Registrados</h6>
+                  <p class="card-text"></p>
+                  <%= link_to 'nueva cuenta', new_cuenta_cuenta_cliente_path, :class=>"card-link" %>
+                  <a href="#" class="card-link">clientes Activos</a>
+                </div>
+                
+              </div>
+        <%end%>
+       </div>
     </div>
   </div>

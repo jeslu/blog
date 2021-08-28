@@ -1,9 +1,11 @@
 class Cuenta::CuentaClientesController < ApplicationController
   before_action :set_cuenta_cuenta_cliente, only: %i[ show edit update destroy ]
+  before_action :set_cuenta_cliente, only: [:equipo_delete]
 
   # GET /cuenta/cuenta_clientes or /cuenta/cuenta_clientes.json
   def index
     @cuenta_cuenta_clientes = Cuenta::CuentaCliente.all
+    @cuenta_cuenta_cliente = Cuenta::CuentaCliente.new
   end
 
   # GET /cuenta/cuenta_clientes/1 or /cuenta/cuenta_clientes/1.json
@@ -12,7 +14,7 @@ class Cuenta::CuentaClientesController < ApplicationController
 
   # GET /cuenta/cuenta_clientes/new
   def new
-    @cuenta_cuenta_cliente = Cuenta::CuentaCliente.new
+    #@cuenta_cuenta_cliente = Cuenta::CuentaCliente.new
   end
 
   # GET /cuenta/cuenta_clientes/1/edit
@@ -21,7 +23,7 @@ class Cuenta::CuentaClientesController < ApplicationController
 
   # POST /cuenta/cuenta_clientes or /cuenta/cuenta_clientes.json
   def create
-    @cuenta_cuenta_cliente = Cuenta::CuentaCliente.new(cuenta_cuenta_cliente_params)
+    @cuenta_cuenta_cliente = current_user.Cuentas.new(cuenta_cuenta_cliente_params)
 
     respond_to do |format|
       if @cuenta_cuenta_cliente.save
@@ -57,9 +59,14 @@ class Cuenta::CuentaClientesController < ApplicationController
   end
 
   private
+  
     # Use callbacks to share common setup or constraints between actions.
     def set_cuenta_cuenta_cliente
-      @cuenta_cuenta_cliente = Cuenta::CuentaCliente.find(params[:id])
+     @cuenta = @cuenta_cuenta_cliente = Cuenta::CuentaCliente.find(params[:id])
+    end
+    #Optener la id de la cuenta de clientes
+    def set_cuenta_cliente
+      @cuenta = Cuenta::CuentaCliente.find(params[:cuenta_id])
     end
 
     # Only allow a list of trusted parameters through.

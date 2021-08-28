@@ -1,4 +1,5 @@
 <p id="notice"><%= notice %></p>
+<div class="card">
 
 <p>
   <strong>Cliente:</strong>
@@ -15,13 +16,49 @@
   <%= @cuenta_cuenta_cliente.fecha %>
 </p>
 
-<p>
-  <strong>Activo:</strong>
-  <%= @cuenta_cuenta_cliente.activo %>
-</p>
 
+
+
+</div>
 <%= link_to 'Edit', edit_cuenta_cuenta_cliente_path(@cuenta_cuenta_cliente) %> |
 <%= link_to 'Back', cuenta_cuenta_clientes_path %>
+
+
+
+<br>
+<h1>Agregar Producto</h1>
+
+
+
+
+
+
+
+  <%= form_with(model: Cuenta::Cotizacion.new, local: true, url: "#{@URL_DOMAIN}/cuenta/cuenta_clientes/#{@cuenta_cuenta_cliente.id}/cotizaciones") do |form| %>
+  
+
+  <div class="field">
+    <%= form.label :producto_id %>
+    
+    <%= form.collection_select(:producto_id, Producto::Producto.all, :id, :nombre, options = {}, {:class => "ui search dropdown"}) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cantidad %>
+    <%= form.number_field :cantidad %>
+  </div>
+
+  <div class="field">
+    <%= form.label :total %>
+    <%= form.text_field :total %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+
+  <%end%>
+  
 <table class="table table-hover">
   <thead>
     <tr>
